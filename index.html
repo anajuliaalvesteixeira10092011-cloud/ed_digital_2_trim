@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Meus Filmes</title>
+
+    <style>
+
+        body {
+            background-color: #eeeeee;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #333333;
+            color: white;
+            padding: 20px;
+        }
+
+        .filmes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .filme {
+            background-color: white;
+            width: 200px;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .filme img {
+            width: 180px;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>🎬 Meus Filmes Favoritos</h1>
+
+    <p>Escolha um filme e clique em gostei!</p>
+
+
+    <div class="filmes">
+
+
+        <div class="filme">
+
+            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba">
+
+            <h2>Filme de Aventura</h2>
+
+            <p>Uma história cheia de aventuras.</p>
+
+            <button onclick="gostei(0)">
+                Gostei ❤️
+            </button>
+
+            <p id="resultado0">0 curtidas</p>
+
+        </div>
+
+
+        <div class="filme">
+
+            <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c">
+
+            <h2>Filme de Ação</h2>
+
+            <p>Uma história cheia de emoção.</p>
+
+            <button onclick="gostei(1)">
+                Gostei ❤️
+            </button>
+
+            <p id="resultado1">0 curtidas</p>
+
+        </div>
+
+
+        <div class="filme">
+
+            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728">
+
+            <h2>Filme de Comédia</h2>
+
+            <p>Uma história para se divertir.</p>
+
+            <button onclick="gostei(2)">
+                Gostei ❤️
+            </button>
+
+            <p id="resultado2">0 curtidas</p>
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+
+        let curtidas = [0, 0, 0];
+
+
+        function gostei(filme) {
+
+            curtidas[filme]++;
+
+            document.getElementById("resultado" + filme).innerHTML =
+                curtidas[filme] + " curtidas";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
