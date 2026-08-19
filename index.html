@@ -129,6 +129,201 @@
 
     </script>
 
+      <hr>
+
+
+    <h2>🎥 Escolha seu gênero favorito</h2>
+
+    <p>Qual tipo de filme você prefere?</p>
+
+
+    <button onclick="escolherGenero('Aventura')">
+        🏔️ Aventura
+    </button>
+
+    <button onclick="escolherGenero('Ação')">
+        💥 Ação
+    </button>
+
+    <button onclick="escolherGenero('Comédia')">
+        😂 Comédia
+    </button>
+
+
+    <p id="generoEscolhido"></p>
+
+
+    <br>
+
+
+    <h2>🎲 Filme surpresa</h2>
+
+    <p>
+        Está sem saber o que assistir?
+        Clique no botão para receber uma sugestão!
+    </p>
+
+
+    <button onclick="filmeSurpresa()">
+        🎬 Escolher filme
+    </button>
+
+
+    <p id="surpresa"></p>
+
+
+    <br>
+
+
+    <h2>⭐ Avalie o site</h2>
+
+    <p>Quantas estrelas você daria para o site?</p>
+
+
+    <button onclick="avaliar(1)">
+        ⭐
+    </button>
+
+    <button onclick="avaliar(2)">
+        ⭐⭐
+    </button>
+
+    <button onclick="avaliar(3)">
+        ⭐⭐⭐
+    </button>
+
+    <button onclick="avaliar(4)">
+        ⭐⭐⭐⭐
+    </button>
+
+    <button onclick="avaliar(5)">
+        ⭐⭐⭐⭐⭐
+    </button>
+
+
+    <p id="avaliacao"></p>
+
+
+    <br>
+
+
+    <h2>👋 Mensagem</h2>
+
+    <p>
+        Clique no botão para receber uma mensagem!
+    </p>
+
+
+    <button onclick="mensagem()">
+        💬 Mostrar mensagem
+    </button>
+
+
+    <p id="mensagem"></p>
+
+
+    <br>
+
+
+    <h2>📊 Interações com o site</h2>
+
+    <p>
+        Você já clicou em algum botão?
+    </p>
+
+    <p id="contador">0 cliques</p>
+
+
+    <br>
+
+
+    <hr>
+
+
+    <p>
+        🎬 Obrigado por visitar o site de filmes!
+    </p>
+
+
+    <script>
+
+
+        function escolherGenero(genero) {
+
+            document.getElementById("generoEscolhido").innerHTML =
+                "Você escolheu filmes de " + genero + "! 🎬";
+
+            contarClique();
+
+        }
+
+
+        function filmeSurpresa() {
+
+            let filmes = [
+                "Homem-Aranha 🕷️",
+                "Vingadores 🦸",
+                "Toy Story 🤠",
+                "Jurassic Park 🦖",
+                "Shrek 🧅"
+            ];
+
+            let numero = Math.floor(Math.random() * filmes.length);
+
+            document.getElementById("surpresa").innerHTML =
+                "Sua sugestão é: " + filmes[numero];
+
+            contarClique();
+
+        }
+
+
+        function avaliar(nota) {
+
+            document.getElementById("avaliacao").innerHTML =
+                "Você deu " + nota + " estrela(s) para o site! ⭐";
+
+            contarClique();
+
+        }
+
+
+        function mensagem() {
+
+            let mensagens = [
+                "Espero que você encontre um filme legal! 🍿",
+                "Prepare a pipoca e bom filme! 🍿",
+                "Que tal assistir um filme hoje? 🎬",
+                "Um bom filme pode melhorar o dia! 😄",
+                "Divirta-se assistindo! 🎥"
+            ];
+
+            let numero = Math.floor(Math.random() * mensagens.length);
+
+            document.getElementById("mensagem").innerHTML =
+                mensagens[numero];
+
+            contarClique();
+
+        }
+
+
+        let cliques = 0;
+
+
+        function contarClique() {
+
+            cliques++;
+
+            document.getElementById("contador").innerHTML =
+                cliques + " cliques";
+
+        }
+
+
+    </script>
+
+
 </body>
 
 </html>
